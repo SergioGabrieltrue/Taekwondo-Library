@@ -1,10 +1,16 @@
-
+export type PoomsaeItem = {
+  id: number;
+  nome: string;
+  significado: string;
+  videoUrl?: string
+};
   
   const PoomsaeColoridaData = [
     {
       id: 1,
       nome: "Taeguk Ii Jang",
-      significado: "Keon"
+      significado: "Keon",
+      videoUrl: "https://www.youtube.com/watch?v=8N8d3hYVwY4"
     },
     {
       id: 2,

@@ -7,7 +7,7 @@ import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useState } from 'react';
 
 import { PoomsaeSections } from '@/data/poomsae';
-// import type { PoomsaeData } from '@/data/poomsae';
+import PoomsaeList from '@/components/PoomsaeList';
 
 export default function HomeScreen() {
 
@@ -59,22 +59,9 @@ export default function HomeScreen() {
 
             </Pressable>
             {faixaColoridaAberta && (
-              <FlatList
-                keyExtractor={(item) => item.id.toString()}
-                data={dadosColoridas.data}
+              <PoomsaeList data ={dadosColoridas.data}>
 
-                renderItem={({ item }) =>
-                  <>
-                    <ThemedText type="subtitle">
-                      {item.nome}
-                    </ThemedText>
-                    <ThemedText>
-                      {`Significado: ${item.significado}`}
-                    </ThemedText>
-                  </>
-                }
-              >
-              </FlatList>
+              </PoomsaeList>
             )}
 
             <Pressable
@@ -90,23 +77,9 @@ export default function HomeScreen() {
             </Pressable>
 
             {faixaPretaAberta && (
-              <FlatList
-                keyExtractor={(item) => item.id.toString()}
-                data={dadosPretas.data}
+              <PoomsaeList data ={dadosPretas.data}>
 
-                renderItem={({ item }) =>
-                  <>
-                    <ThemedText type="subtitle">
-                      {item.nome}
-                    </ThemedText>
-                    <ThemedText>
-                      {`Significado: ${item.significado}`}
-                    </ThemedText>
-                  </>
-                }
-              >
-
-              </FlatList>
+              </PoomsaeList>
             )}
           </ThemedView>
 
