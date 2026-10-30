@@ -11,11 +11,15 @@ type PoomsaeListProps = {
 
 
 const handlePress = async (url: string | undefined) => {
-    if (url) {
+    try {
+        if (!url) {
+            Alert.alert("Vídeo indisponível", "Este conteúdo ainda não possui um vídeo.");
+            return;
+        }
         await Linking.openURL(url);
     }
-    else {
-        Alert.alert(`A URL deste conteúdo não está ativaa ou disponível: ${url}`);
+    catch (err) {
+        Alert.alert(`A URL deste conteúdo não está ativa ou disponível: ${url}`);
     }
 }
 
