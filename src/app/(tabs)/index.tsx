@@ -59,7 +59,7 @@ export default function HomeScreen() {
 
             </Pressable>
             {faixaColoridaAberta && (
-              <PoomsaeList data ={dadosColoridas.data}>
+              <PoomsaeList data ={dadosColoridas.data} categoria="coloridas">
 
               </PoomsaeList>
             )}
@@ -77,7 +77,7 @@ export default function HomeScreen() {
             </Pressable>
 
             {faixaPretaAberta && (
-              <PoomsaeList data ={dadosPretas.data}>
+              <PoomsaeList data ={dadosPretas.data} categoria = "pretas">
 
               </PoomsaeList>
             )}
