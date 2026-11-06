@@ -5,7 +5,7 @@ export type PoomsaeItem = {
   videoUrl?: string
 };
   
-  const PoomsaeColoridaData = [
+  const PoomsaeColoridaData: PoomsaeItem[] = [
     {
       id: 1,
       nome: "Taeguk Ii Jang",
@@ -49,7 +49,7 @@ export type PoomsaeItem = {
     }
   ]
 
-  const PoomsaePretaData = [
+  const PoomsaePretaData: PoomsaeItem[] = [
     
   {
     id: 1,

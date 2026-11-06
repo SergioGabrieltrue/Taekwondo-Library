@@ -13,31 +13,15 @@ type PoomsaeListProps = {
 
 
 
-const handlePress = async (url: string | undefined) => {
-    try {
-        if (!url) {
-            Alert.alert("Vídeo indisponível", "Este conteúdo ainda não possui um vídeo.");
-            return;
-        }
-        await Linking.openURL(url);
-    }
-    catch (err) {
-        Alert.alert(`A URL deste conteúdo não está ativa ou disponível: ${url}`);
-    }
-}
-
-
-
-
-export default function PoomsaeList({ data }: PoomsaeListProps) {
+export default function PoomsaeList({ data, categoria}: PoomsaeListProps) {
 
     const router = useRouter()
 
-    const handleDetails =  (id: number) => {
+    const handleDetails =  (id: number, categoria: PoomsaeListProps["categoria"]) => {
     if(!id){
         throw new Error("Id não identificado.")
     }
-    router.push(`/poomsae/${id}`)
+    router.push(`/poomsae/${categoria}/${id}`)
 }
 
     return (
@@ -50,7 +34,7 @@ export default function PoomsaeList({ data }: PoomsaeListProps) {
                 // const idPoomsae = item.id
 
                 return (<Pressable
-                    onPress={() => handleDetails(item.id)} >
+                    onPress={() => handleDetails(item.id, categoria)} >
                     {({ pressed }) => (
 
                         <ThemedView style={[
